@@ -1,0 +1,2770 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+  />
+
+  <title>Biznext Dewas | Grow Your Shop Income</title>
+
+  <meta
+    name="description"
+    content="Join the Biznext retailer network in Dewas. Offer digital financial, bill payment, money transfer, travel and PAN services from your shop."
+  />
+
+  <meta name="theme-color" content="#1746A2" />
+
+  <style>
+    /* =========================================================
+       DESIGN SYSTEM
+    ========================================================= */
+
+    :root {
+      --blue-950: #071b3d;
+      --blue-900: #0b2860;
+      --blue-800: #103579;
+      --blue-700: #1746a2;
+      --blue-600: #2864ca;
+      --blue-100: #eaf1ff;
+      --blue-50: #f5f8ff;
+
+      --green: #25d366;
+      --green-dark: #16a34a;
+      --green-soft: #eafbf1;
+
+      --ink: #111827;
+      --ink-soft: #334155;
+      --muted: #64748b;
+
+      --white: #fff;
+      --surface: #f7f9fc;
+      --border: #e5eaf2;
+
+      --shadow-sm:
+        0 8px 25px rgba(11, 40, 96, 0.07);
+
+      --shadow-md:
+        0 20px 60px rgba(11, 40, 96, 0.12);
+
+      --shadow-lg:
+        0 30px 90px rgba(7, 27, 61, 0.2);
+
+      --radius-sm: 12px;
+      --radius-md: 20px;
+      --radius-lg: 30px;
+
+      --container: 1180px;
+    }
+
+    /* =========================================================
+       RESET
+    ========================================================= */
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 90px;
+    }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--surface);
+      font-family:
+        Inter,
+        ui-sans-serif,
+        system-ui,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        sans-serif;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    body.menu-open {
+      overflow: hidden;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button,
+    input,
+    textarea {
+      font: inherit;
+    }
+
+    button {
+      border: 0;
+    }
+
+    .container {
+      width: min(calc(100% - 32px), var(--container));
+      margin-inline: auto;
+    }
+
+    .section {
+      padding: 110px 0;
+    }
+
+    /* =========================================================
+       REUSABLE UI
+    ========================================================= */
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      width: fit-content;
+      padding: 7px 12px;
+      border: 1px solid #d8e4ff;
+      border-radius: 999px;
+      background: var(--blue-100);
+      color: var(--blue-700);
+      font-size: 12px;
+      font-weight: 850;
+      letter-spacing: 0.02em;
+    }
+
+    .eyebrow-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--green);
+      box-shadow: 0 0 0 4px rgba(37, 211, 102, 0.13);
+    }
+
+    .section-heading {
+      max-width: 720px;
+      margin: 0 auto 55px;
+      text-align: center;
+    }
+
+    .section-heading .eyebrow {
+      margin-bottom: 16px;
+    }
+
+    .section-heading h2 {
+      margin: 0 0 15px;
+      color: var(--blue-900);
+      font-size: clamp(2rem, 4vw, 3.35rem);
+      line-height: 1.08;
+      letter-spacing: -0.045em;
+    }
+
+    .section-heading p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 1rem;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      min-height: 50px;
+      padding: 0 20px;
+      border-radius: 13px;
+      font-size: 14px;
+      font-weight: 850;
+      cursor: pointer;
+      transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        background 0.2s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+    }
+
+    .btn-primary {
+      color: var(--white);
+      background: var(--blue-700);
+      box-shadow: 0 12px 30px rgba(23, 70, 162, 0.25);
+    }
+
+    .btn-primary:hover {
+      background: var(--blue-800);
+    }
+
+    .btn-green {
+      color: var(--white);
+      background: var(--green);
+      box-shadow: 0 12px 30px rgba(37, 211, 102, 0.23);
+    }
+
+    .btn-green:hover {
+      background: #1fc35d;
+    }
+
+    .btn-outline {
+      color: var(--blue-700);
+      background: white;
+      border: 1px solid #cfdaf0;
+    }
+
+    .btn-lg {
+      min-height: 58px;
+      padding-inline: 25px;
+      border-radius: 15px;
+      font-size: 15px;
+    }
+
+    /* =========================================================
+       HEADER
+    ========================================================= */
+
+    .site-header {
+      position: fixed;
+      z-index: 1000;
+      top: 0;
+      right: 0;
+      left: 0;
+
+      background: rgba(255, 255, 255, 0.9);
+      border-bottom: 1px solid rgba(229, 234, 242, 0.8);
+
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+    }
+
+    .nav {
+      min-height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 11px;
+      font-weight: 950;
+      color: var(--blue-900);
+      letter-spacing: -0.03em;
+    }
+
+    .brand-mark {
+      position: relative;
+      width: 40px;
+      height: 40px;
+      display: grid;
+      place-items: center;
+      border-radius: 12px;
+      color: white;
+      background:
+        linear-gradient(
+          135deg,
+          var(--blue-700),
+          var(--blue-600)
+        );
+      box-shadow: 0 9px 25px rgba(23, 70, 162, 0.27);
+    }
+
+    .brand-mark::after {
+      content: "";
+      position: absolute;
+      right: -3px;
+      bottom: -3px;
+      width: 11px;
+      height: 11px;
+      border: 3px solid white;
+      border-radius: 50%;
+      background: var(--green);
+    }
+
+    .brand-text strong {
+      display: block;
+      font-size: 16px;
+      line-height: 1.1;
+    }
+
+    .brand-text small {
+      display: block;
+      margin-top: 3px;
+      color: var(--muted);
+      font-size: 9px;
+      font-weight: 750;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .desktop-nav {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+    }
+
+    .desktop-nav > a:not(.btn) {
+      color: var(--ink-soft);
+      font-size: 14px;
+      font-weight: 750;
+    }
+
+    .desktop-nav > a:not(.btn):hover {
+      color: var(--blue-700);
+    }
+
+    .mobile-menu-btn {
+      display: none;
+      width: 44px;
+      height: 44px;
+      border-radius: 11px;
+      background: var(--blue-50);
+      color: var(--blue-700);
+      cursor: pointer;
+    }
+
+    /* =========================================================
+       MOBILE MENU
+    ========================================================= */
+
+    .mobile-menu {
+      display: none;
+      position: fixed;
+      z-index: 999;
+      inset: 76px 0 auto;
+      padding: 18px 16px 25px;
+      background: white;
+      border-bottom: 1px solid var(--border);
+      box-shadow: var(--shadow-md);
+    }
+
+    .mobile-menu.active {
+      display: block;
+    }
+
+    .mobile-menu a {
+      display: block;
+      padding: 15px;
+      border-radius: 12px;
+      font-weight: 800;
+    }
+
+    .mobile-menu a:hover {
+      background: var(--blue-50);
+    }
+
+    /* =========================================================
+       HERO
+    ========================================================= */
+
+    .hero {
+      position: relative;
+      padding: 155px 0 105px;
+      overflow: hidden;
+
+      background:
+        radial-gradient(
+          circle at 78% 22%,
+          rgba(40, 100, 202, 0.17),
+          transparent 30%
+        ),
+        linear-gradient(
+          135deg,
+          #f8fbff 0%,
+          #edf4ff 100%
+        );
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      width: 650px;
+      height: 650px;
+      right: -300px;
+      top: -220px;
+      border: 90px solid rgba(23, 70, 162, 0.035);
+      border-radius: 50%;
+    }
+
+    .hero-grid {
+      position: relative;
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 70px;
+      align-items: center;
+    }
+
+    .hero-copy .eyebrow {
+      margin-bottom: 21px;
+    }
+
+    .hero h1 {
+      max-width: 720px;
+      margin: 0 0 22px;
+
+      color: var(--blue-950);
+      font-size: clamp(2.8rem, 6vw, 5.2rem);
+      line-height: 0.99;
+      letter-spacing: -0.065em;
+    }
+
+    .hero h1 .highlight {
+      color: var(--blue-700);
+    }
+
+    .hero-description {
+      max-width: 650px;
+      margin: 0 0 30px;
+      color: var(--ink-soft);
+      font-size: clamp(1rem, 2vw, 1.15rem);
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .hero-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 18px;
+      margin-top: 20px;
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .hero-meta span {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .meta-check {
+      color: var(--green-dark);
+      font-weight: 950;
+    }
+
+    /* =========================================================
+       HERO VISUAL
+    ========================================================= */
+
+    .hero-visual {
+      position: relative;
+    }
+
+    .phone-card {
+      width: min(100%, 430px);
+      margin-left: auto;
+      padding: 12px;
+      border: 1px solid rgba(255, 255, 255, 0.8);
+      border-radius: 34px;
+      background: rgba(255, 255, 255, 0.72);
+      box-shadow: var(--shadow-lg);
+      transform: rotate(1deg);
+    }
+
+    .phone-inner {
+      padding: 24px;
+      overflow: hidden;
+      border-radius: 25px;
+      background: linear-gradient(145deg, #0b2860, #1746a2);
+    }
+
+    .phone-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 24px;
+      color: white;
+    }
+
+    .phone-top small {
+      opacity: 0.68;
+      font-size: 10px;
+    }
+
+    .active-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 9px;
+      border-radius: 999px;
+      color: #c9ffda;
+      background: rgba(37, 211, 102, 0.12);
+      font-size: 9px;
+      font-weight: 850;
+    }
+
+    .active-pill span {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--green);
+    }
+
+    .income-panel {
+      margin-bottom: 15px;
+      padding: 23px;
+      border-radius: 20px;
+      background: white;
+    }
+
+    .income-panel small {
+      color: var(--muted);
+      font-size: 10px;
+      font-weight: 750;
+    }
+
+    .income-panel h3 {
+      margin: 4px 0 5px;
+      color: var(--blue-900);
+      font-size: 22px;
+      letter-spacing: -0.03em;
+    }
+
+    .income-panel p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 10px;
+    }
+
+    .service-list {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 9px;
+    }
+
+    .service-mini {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      padding: 11px;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 13px;
+      color: white;
+      background: rgba(255, 255, 255, 0.08);
+      font-size: 10px;
+      font-weight: 750;
+    }
+
+    .service-mini-icon {
+      width: 30px;
+      height: 30px;
+      display: grid;
+      place-items: center;
+      flex: 0 0 auto;
+      border-radius: 9px;
+      color: var(--blue-700);
+      background: white;
+      font-size: 10px;
+      font-weight: 900;
+    }
+
+    .hero-float {
+      position: absolute;
+      left: -35px;
+      bottom: 25px;
+
+      display: flex;
+      align-items: center;
+      gap: 10px;
+
+      padding: 13px 16px;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      background: white;
+      box-shadow: var(--shadow-md);
+    }
+
+    .hero-float-icon {
+      width: 38px;
+      height: 38px;
+      display: grid;
+      place-items: center;
+      border-radius: 11px;
+      color: white;
+      background: var(--green);
+    }
+
+    .hero-float strong {
+      display: block;
+      font-size: 12px;
+    }
+
+    .hero-float small {
+      display: block;
+      color: var(--muted);
+      font-size: 9px;
+    }
+
+    /* =========================================================
+       TRUST / BENEFITS
+    ========================================================= */
+
+    .trust-section {
+      position: relative;
+      z-index: 5;
+      margin-top: -42px;
+    }
+
+    .trust-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      overflow: hidden;
+
+      border: 1px solid var(--border);
+      border-radius: 22px;
+      background: white;
+      box-shadow: var(--shadow-md);
+    }
+
+    .trust-item {
+      display: flex;
+      align-items: center;
+      gap: 13px;
+      padding: 22px 20px;
+      border-right: 1px solid var(--border);
+    }
+
+    .trust-item:last-child {
+      border-right: 0;
+    }
+
+    .trust-icon {
+      width: 43px;
+      height: 43px;
+      display: grid;
+      place-items: center;
+      flex: 0 0 auto;
+      border-radius: 12px;
+      color: var(--blue-700);
+      background: var(--blue-100);
+      font-size: 15px;
+      font-weight: 950;
+    }
+
+    .trust-item strong {
+      display: block;
+      font-size: 13px;
+    }
+
+    .trust-item small {
+      display: block;
+      margin-top: 2px;
+      color: var(--muted);
+      font-size: 9px;
+    }
+
+    /* =========================================================
+       SERVICES
+    ========================================================= */
+
+    .services {
+      background: white;
+    }
+
+    .service-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .service-card {
+      position: relative;
+      padding: 27px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      background: white;
+      overflow: hidden;
+      transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        border-color 0.25s ease;
+    }
+
+    .service-card::after {
+      content: "";
+      position: absolute;
+      width: 100px;
+      height: 100px;
+      right: -45px;
+      bottom: -45px;
+      border-radius: 50%;
+      background: var(--blue-50);
+    }
+
+    .service-card:hover {
+      transform: translateY(-6px);
+      border-color: #c9d9f7;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .service-icon {
+      position: relative;
+      z-index: 1;
+
+      width: 54px;
+      height: 54px;
+      display: grid;
+      place-items: center;
+      margin-bottom: 18px;
+
+      border-radius: 15px;
+      color: var(--blue-700);
+      background: var(--blue-100);
+      font-weight: 950;
+    }
+
+    .service-card h3 {
+      position: relative;
+      z-index: 1;
+      margin: 0 0 7px;
+      font-size: 16px;
+    }
+
+    .service-card p {
+      position: relative;
+      z-index: 1;
+      margin: 0;
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    /* =========================================================
+       EARNING STRIP
+    ========================================================= */
+
+    .earning-section {
+      background: var(--blue-950);
+      color: white;
+      overflow: hidden;
+    }
+
+    .earning-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 70px;
+      align-items: center;
+    }
+
+    .earning-copy .eyebrow {
+      color: white;
+      border-color: rgba(255,255,255,.12);
+      background: rgba(255,255,255,.08);
+    }
+
+    .earning-copy h2 {
+      margin: 18px 0;
+      font-size: clamp(2rem, 4vw, 3.3rem);
+      line-height: 1.08;
+      letter-spacing: -0.045em;
+    }
+
+    .earning-copy p {
+      max-width: 550px;
+      margin: 0;
+      color: rgba(255,255,255,.7);
+    }
+
+    .earning-points {
+      display: grid;
+      gap: 12px;
+      margin-top: 27px;
+    }
+
+    .earning-point {
+      display: flex;
+      align-items: center;
+      gap: 11px;
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .earning-check {
+      width: 23px;
+      height: 23px;
+      display: grid;
+      place-items: center;
+      flex: 0 0 auto;
+      border-radius: 50%;
+      color: white;
+      background: var(--green);
+      font-size: 11px;
+    }
+
+    .earning-card {
+      padding: 8px;
+      border-radius: 27px;
+      background: rgba(255,255,255,.08);
+      border: 1px solid rgba(255,255,255,.1);
+    }
+
+    .earning-card-inner {
+      padding: 28px;
+      border-radius: 20px;
+      background: linear-gradient(
+        145deg,
+        rgba(255,255,255,.12),
+        rgba(255,255,255,.04)
+      );
+    }
+
+    .earning-card-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 22px;
+    }
+
+    .earning-card-header small {
+      color: rgba(255,255,255,.58);
+      font-size: 10px;
+    }
+
+    .earning-card-header strong {
+      font-size: 13px;
+    }
+
+    .income-bars {
+      display: grid;
+      gap: 13px;
+    }
+
+    .income-row {
+      display: grid;
+      grid-template-columns: 90px 1fr 45px;
+      align-items: center;
+      gap: 10px;
+      font-size: 10px;
+    }
+
+    .income-row span {
+      color: rgba(255,255,255,.7);
+    }
+
+    .bar {
+      height: 7px;
+      overflow: hidden;
+      border-radius: 999px;
+      background: rgba(255,255,255,.1);
+    }
+
+    .bar i {
+      display: block;
+      height: 100%;
+      border-radius: inherit;
+      background: var(--green);
+    }
+
+    .income-row b {
+      text-align: right;
+      font-size: 9px;
+    }
+
+    /* =========================================================
+       HOW IT WORKS
+    ========================================================= */
+
+    .steps-section {
+      background: var(--surface);
+    }
+
+    .steps-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .step-card {
+      position: relative;
+      padding: 32px 26px;
+      text-align: center;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      background: white;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .step-number {
+      width: 57px;
+      height: 57px;
+      display: grid;
+      place-items: center;
+      margin: 0 auto 18px;
+      border-radius: 50%;
+      color: white;
+      background: var(--blue-700);
+      box-shadow: 0 12px 25px rgba(23,70,162,.22);
+      font-size: 16px;
+      font-weight: 950;
+    }
+
+    .step-card h3 {
+      margin: 0 0 7px;
+      font-size: 16px;
+    }
+
+    .step-card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .step-arrow {
+      position: absolute;
+      top: 58px;
+      right: -22px;
+      color: #b8c6dc;
+      font-size: 24px;
+      font-weight: 900;
+    }
+
+    /* =========================================================
+       APPLICATION
+    ========================================================= */
+
+    .apply-section {
+      position: relative;
+      overflow: hidden;
+      background:
+        radial-gradient(
+          circle at 90% 10%,
+          rgba(37,211,102,.12),
+          transparent 28%
+        ),
+        linear-gradient(
+          135deg,
+          #0b2860,
+          #1746a2
+        );
+    }
+
+    .apply-grid {
+      display: grid;
+      grid-template-columns: .85fr 1.15fr;
+      gap: 75px;
+      align-items: center;
+    }
+
+    .apply-copy {
+      color: white;
+    }
+
+    .apply-copy .eyebrow {
+      color: white;
+      background: rgba(255,255,255,.08);
+      border-color: rgba(255,255,255,.12);
+    }
+
+    .apply-copy h2 {
+      margin: 18px 0;
+      font-size: clamp(2.1rem, 4vw, 3.4rem);
+      line-height: 1.07;
+      letter-spacing: -0.05em;
+    }
+
+    .apply-copy > p {
+      margin: 0;
+      color: rgba(255,255,255,.7);
+      font-size: 14px;
+    }
+
+    .apply-benefits {
+      display: grid;
+      gap: 12px;
+      margin-top: 28px;
+    }
+
+    .apply-benefit {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .apply-benefit span {
+      width: 23px;
+      height: 23px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      background: var(--green);
+      font-size: 10px;
+    }
+
+    .form-card {
+      padding: 34px;
+      border-radius: 27px;
+      background: white;
+      box-shadow: 0 30px 80px rgba(0,0,0,.22);
+    }
+
+    .form-card h3 {
+      margin: 0 0 5px;
+      color: var(--blue-900);
+      font-size: 21px;
+      letter-spacing: -0.025em;
+    }
+
+    .form-subtitle {
+      margin: 0 0 24px;
+      color: var(--muted);
+      font-size: 11px;
+    }
+
+    .form-group {
+      margin-bottom: 16px;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 7px;
+      color: var(--ink);
+      font-size: 11px;
+      font-weight: 850;
+    }
+
+    .input-wrap {
+      position: relative;
+    }
+
+    .input-wrap span {
+      position: absolute;
+      top: 50%;
+      left: 14px;
+      transform: translateY(-50%);
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .input-wrap input {
+      padding-left: 39px;
+    }
+
+    .form-group input,
+    .form-group textarea {
+      width: 100%;
+      border: 1px solid #dbe3ef;
+      outline: none;
+      border-radius: 12px;
+      padding: 13px 14px;
+      color: var(--ink);
+      background: #fbfcfe;
+      font-size: 13px;
+      transition:
+        border-color .2s,
+        box-shadow .2s,
+        background .2s;
+    }
+
+    .form-group textarea {
+      min-height: 95px;
+      resize: vertical;
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus {
+      border-color: var(--blue-600);
+      background: white;
+      box-shadow: 0 0 0 4px rgba(40,100,202,.08);
+    }
+
+    .form-group.invalid input,
+    .form-group.invalid textarea {
+      border-color: #ef4444;
+    }
+
+    .error-text {
+      display: none;
+      margin-top: 5px;
+      color: #dc2626;
+      font-size: 10px;
+      font-weight: 650;
+    }
+
+    .form-group.invalid .error-text {
+      display: block;
+    }
+
+    .submit-btn {
+      width: 100%;
+      margin-top: 5px;
+    }
+
+    .privacy-note {
+      margin: 12px 0 0;
+      color: #94a3b8;
+      text-align: center;
+      font-size: 9px;
+    }
+
+    /* =========================================================
+       CONTACT
+    ========================================================= */
+
+    .contact-section {
+      background: white;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+      max-width: 900px;
+      margin: auto;
+    }
+
+    .contact-card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 115px;
+      padding: 15px;
+      text-align: center;
+      border: 1px solid var(--border);
+      border-radius: 17px;
+      background: white;
+      transition:
+        transform .2s,
+        box-shadow .2s;
+    }
+
+    .contact-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .contact-icon {
+      width: 39px;
+      height: 39px;
+      display: grid;
+      place-items: center;
+      margin-bottom: 9px;
+      border-radius: 11px;
+      color: var(--blue-700);
+      background: var(--blue-100);
+      font-weight: 900;
+    }
+
+    .contact-card strong {
+      font-size: 11px;
+    }
+
+    .contact-card small {
+      max-width: 100%;
+      margin-top: 3px;
+      color: var(--muted);
+      font-size: 9px;
+      overflow-wrap: anywhere;
+    }
+
+    /* =========================================================
+       FOOTER
+    ========================================================= */
+
+    footer {
+      padding: 30px 0 100px;
+      color: rgba(255,255,255,.58);
+      background: var(--blue-950);
+      text-align: center;
+      font-size: 10px;
+    }
+
+    footer strong {
+      color: white;
+    }
+
+    /* =========================================================
+       FLOATING WHATSAPP
+    ========================================================= */
+
+    .floating-wa {
+      position: fixed;
+      z-index: 900;
+      right: 22px;
+      bottom: 22px;
+
+      width: 61px;
+      height: 61px;
+
+      display: grid;
+      place-items: center;
+
+      border-radius: 50%;
+      color: white;
+      background: var(--green);
+
+      box-shadow:
+        0 12px 30px rgba(37,211,102,.4),
+        0 0 0 6px rgba(37,211,102,.1);
+
+      transition:
+        transform .2s,
+        box-shadow .2s;
+    }
+
+    .floating-wa:hover {
+      transform: scale(1.08);
+      box-shadow:
+        0 16px 38px rgba(37,211,102,.5),
+        0 0 0 7px rgba(37,211,102,.12);
+    }
+
+    .floating-wa svg {
+      width: 31px;
+      height: 31px;
+    }
+
+    /* =========================================================
+       TOAST
+    ========================================================= */
+
+    .toast {
+      position: fixed;
+      z-index: 2000;
+      left: 50%;
+      bottom: 95px;
+
+      max-width: calc(100% - 30px);
+      padding: 12px 16px;
+
+      border-radius: 12px;
+      color: white;
+      background: #111827;
+      box-shadow: var(--shadow-md);
+
+      font-size: 12px;
+      font-weight: 700;
+
+      opacity: 0;
+      pointer-events: none;
+      transform: translate(-50%, 15px);
+
+      transition:
+        opacity .25s,
+        transform .25s;
+    }
+
+    .toast.show {
+      opacity: 1;
+      transform: translate(-50%, 0);
+    }
+
+    /* =========================================================
+       ANIMATION
+    ========================================================= */
+
+    @media (prefers-reduced-motion: no-preference) {
+      .reveal {
+        opacity: 0;
+        transform: translateY(18px);
+        transition:
+          opacity .7s ease,
+          transform .7s ease;
+      }
+
+      .reveal.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      .pulse {
+        animation: pulse 2.2s infinite;
+      }
+
+      @keyframes pulse {
+        0%, 100% {
+          box-shadow:
+            0 12px 30px rgba(37,211,102,.4),
+            0 0 0 6px rgba(37,211,102,.1);
+        }
+
+        50% {
+          box-shadow:
+            0 15px 38px rgba(37,211,102,.48),
+            0 0 0 10px rgba(37,211,102,.04);
+        }
+      }
+    }
+
+    /* =========================================================
+       TABLET
+    ========================================================= */
+
+    @media (max-width: 950px) {
+      .hero-grid,
+      .earning-grid,
+      .apply-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-copy {
+        text-align: center;
+      }
+
+      .hero-copy .eyebrow {
+        margin-inline: auto;
+      }
+
+      .hero-description {
+        margin-inline: auto;
+      }
+
+      .hero-actions,
+      .hero-meta {
+        justify-content: center;
+      }
+
+      .hero-visual {
+        max-width: 500px;
+        width: 100%;
+        margin: 15px auto 0;
+      }
+
+      .trust-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .trust-item:nth-child(2) {
+        border-right: 0;
+      }
+
+      .trust-item:nth-child(-n+2) {
+        border-bottom: 1px solid var(--border);
+      }
+
+      .service-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .earning-copy {
+        text-align: center;
+      }
+
+      .earning-copy p {
+        margin-inline: auto;
+      }
+
+      .earning-points {
+        max-width: 390px;
+        margin-inline: auto;
+        text-align: left;
+      }
+
+      .earning-card {
+        max-width: 550px;
+        width: 100%;
+        margin-inline: auto;
+      }
+
+      .apply-copy {
+        text-align: center;
+      }
+
+      .apply-copy > p {
+        max-width: 550px;
+        margin-inline: auto;
+      }
+
+      .apply-benefits {
+        max-width: 350px;
+        margin-inline: auto;
+        text-align: left;
+      }
+
+      .form-card {
+        max-width: 600px;
+        width: 100%;
+        margin-inline: auto;
+      }
+
+      .contact-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    /* =========================================================
+       MOBILE
+    ========================================================= */
+
+    @media (max-width: 600px) {
+      .container {
+        width: min(calc(100% - 24px), var(--container));
+      }
+
+      .section {
+        padding: 78px 0;
+      }
+
+      .desktop-nav {
+        display: none;
+      }
+
+      .mobile-menu-btn {
+        display: grid;
+        place-items: center;
+      }
+
+      .hero {
+        padding: 120px 0 75px;
+      }
+
+      .hero h1 {
+        font-size: clamp(2.55rem, 13vw, 3.7rem);
+      }
+
+      .hero-description {
+        font-size: .95rem;
+      }
+
+      .hero-actions {
+        flex-direction: column;
+      }
+
+      .hero-actions .btn {
+        width: 100%;
+      }
+
+      .hero-meta {
+        gap: 9px 15px;
+        font-size: 10px;
+      }
+
+      .phone-card {
+        border-radius: 27px;
+      }
+
+      .phone-inner {
+        padding: 19px;
+        border-radius: 20px;
+      }
+
+      .hero-float {
+        left: 4px;
+        bottom: -30px;
+        padding: 10px 12px;
+      }
+
+      .trust-section {
+        margin-top: -25px;
+      }
+
+      .trust-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .trust-item,
+      .trust-item:nth-child(2) {
+        border-right: 0;
+        border-bottom: 1px solid var(--border);
+      }
+
+      .trust-item:last-child {
+        border-bottom: 0;
+      }
+
+      .section-heading {
+        margin-bottom: 37px;
+      }
+
+      .section-heading h2 {
+        font-size: 2.15rem;
+      }
+
+      .service-grid,
+      .steps-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .step-arrow {
+        display: none;
+      }
+
+      .step-card {
+        padding: 27px 22px;
+      }
+
+      .earning-grid,
+      .apply-grid {
+        gap: 38px;
+      }
+
+      .earning-card-inner {
+        padding: 20px 15px;
+      }
+
+      .income-row {
+        grid-template-columns: 65px 1fr 38px;
+      }
+
+      .form-card {
+        padding: 24px 18px;
+        border-radius: 21px;
+      }
+
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .contact-card {
+        min-height: 82px;
+      }
+
+      .floating-wa {
+        width: 57px;
+        height: 57px;
+        right: 15px;
+        bottom: 15px;
+      }
+
+      footer {
+        padding-bottom: 90px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- =======================================================
+       HEADER
+  ======================================================== -->
+
+  <header class="site-header">
+    <div class="container nav">
+
+      <a href="#" class="brand">
+        <span class="brand-mark">B</span>
+
+        <span class="brand-text">
+          <strong>Biznext Dewas</strong>
+          <small>Authorized Distributor</small>
+        </span>
+      </a>
+
+      <nav class="desktop-nav">
+        <a href="tel:+918827979446">Call Us</a>
+        <a href="#services">Services</a>
+        <a href="#how-it-works">How It Works</a>
+
+        <a href="#apply" class="btn btn-green">
+          Start Earning
+          <span>→</span>
+        </a>
+      </nav>
+
+      <button
+        class="mobile-menu-btn"
+        id="menuButton"
+        type="button"
+        aria-label="Open menu"
+        aria-expanded="false"
+      >
+        ☰
+      </button>
+
+    </div>
+  </header>
+
+
+  <!-- =======================================================
+       MOBILE NAV
+  ======================================================== -->
+
+  <div class="mobile-menu" id="mobileMenu">
+
+    <a href="tel:+918827979446">
+      📞 Call Us
+    </a>
+
+    <a href="#services">
+      Services
+    </a>
+
+    <a href="#how-it-works">
+      How It Works
+    </a>
+
+    <a href="#apply" class="btn btn-green">
+      Start Earning →
+    </a>
+
+  </div>
+
+
+  <main>
+
+    <!-- =====================================================
+         HERO
+    ====================================================== -->
+
+    <section class="hero">
+
+      <div class="container hero-grid">
+
+        <div class="hero-copy reveal">
+
+          <div class="eyebrow">
+            <span class="eyebrow-dot"></span>
+            For Retail Shop Owners in Dewas
+          </div>
+
+          <h1>
+            Make Your Shop
+            <span class="highlight">More Valuable.</span>
+          </h1>
+
+          <p class="hero-description">
+            Turn your existing retail counter into a convenient
+            digital service point. Offer financial, utility and
+            travel services to customers — and create additional
+            income opportunities.
+          </p>
+
+          <div class="hero-actions">
+
+            <a
+              href="#apply"
+              class="btn btn-green btn-lg"
+            >
+              Create Free Retailer ID
+              <span>→</span>
+            </a>
+
+            <a
+              href="tel:+918827979446"
+              class="btn btn-outline btn-lg"
+            >
+              📞 Talk to Us
+            </a>
+
+          </div>
+
+          <div class="hero-meta">
+
+            <span>
+              <b class="meta-check">✓</b>
+              ₹0 Joining Fee
+            </span>
+
+            <span>
+              <b class="meta-check">✓</b>
+              Local Dewas Support
+            </span>
+
+            <span>
+              <b class="meta-check">✓</b>
+              Multiple Services
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <!-- HERO VISUAL -->
+
+        <div class="hero-visual reveal">
+
+          <div class="phone-card">
+
+            <div class="phone-inner">
+
+              <div class="phone-top">
+
+                <div>
+                  <small>RETAILER NETWORK</small>
+                  <strong style="display:block;margin-top:2px;">
+                    Biznext Dewas
+                  </strong>
+                </div>
+
+                <div class="active-pill">
+                  <span></span>
+                  READY
+                </div>
+
+              </div>
+
+
+              <div class="income-panel">
+
+                <small>
+                  BUILD MULTIPLE INCOME STREAMS
+                </small>
+
+                <h3>
+                  One Shop. More Services.
+                </h3>
+
+                <p>
+                  Serve everyday digital needs from your existing store.
+                </p>
+
+              </div>
+
+
+              <div class="service-list">
+
+                <div class="service-mini">
+                  <div class="service-mini-icon">₹</div>
+                  Aadhaar ATM
+                </div>
+
+                <div class="service-mini">
+                  <div class="service-mini-icon">↗</div>
+                  Money Transfer
+                </div>
+
+                <div class="service-mini">
+                  <div class="service-mini-icon">ATM</div>
+                  Micro ATM
+                </div>
+
+                <div class="service-mini">
+                  <div class="service-mini-icon">▣</div>
+                  Bill Payments
+                </div>
+
+                <div class="service-mini">
+                  <div class="service-mini-icon">✈</div>
+                  Travel
+                </div>
+
+                <div class="service-mini">
+                  <div class="service-mini-icon">PAN</div>
+                  PAN Services
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <div class="hero-float">
+
+            <div class="hero-float-icon">
+              ✓
+            </div>
+
+            <div>
+              <strong>Start with WhatsApp</strong>
+              <small>Simple retailer application</small>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         BENEFITS
+    ====================================================== -->
+
+    <div class="container trust-section">
+
+      <div class="trust-grid">
+
+        <div class="trust-item">
+          <div class="trust-icon">₹</div>
+
+          <div>
+            <strong>₹0 Joining Fee</strong>
+            <small>No upfront joining charge</small>
+          </div>
+        </div>
+
+
+        <div class="trust-item">
+          <div class="trust-icon">★</div>
+
+          <div>
+            <strong>Commission Opportunities</strong>
+            <small>Earn from multiple services</small>
+          </div>
+        </div>
+
+
+        <div class="trust-item">
+          <div class="trust-icon">↗</div>
+
+          <div>
+            <strong>Bank Settlements</strong>
+            <small>Convenient transaction flow</small>
+          </div>
+        </div>
+
+
+        <div class="trust-item">
+          <div class="trust-icon">24</div>
+
+          <div>
+            <strong>Local Support</strong>
+            <small>Help when you need it</small>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <!-- =====================================================
+         SERVICES
+    ====================================================== -->
+
+    <section
+      class="section services"
+      id="services"
+    >
+
+      <div class="container">
+
+        <div class="section-heading reveal">
+
+          <div class="eyebrow">
+            <span class="eyebrow-dot"></span>
+            DIGITAL SERVICES
+          </div>
+
+          <h2>
+            More Services.
+            More Customer Visits.
+          </h2>
+
+          <p>
+            Give people in your locality a reason to come
+            to your shop for their everyday digital needs.
+          </p>
+
+        </div>
+
+
+        <div class="service-grid">
+
+          <article class="service-card reveal">
+            <div class="service-icon">₹</div>
+
+            <h3>Aadhaar ATM (AEPS)</h3>
+
+            <p>
+              Provide Aadhaar-enabled banking services
+              conveniently from your retail counter.
+            </p>
+          </article>
+
+
+          <article class="service-card reveal">
+            <div class="service-icon">↗</div>
+
+            <h3>Money Transfer (DMT)</h3>
+
+            <p>
+              Help customers transfer money conveniently
+              to bank accounts across India.
+            </p>
+          </article>
+
+
+          <article class="service-card reveal">
+            <div class="service-icon">ATM</div>
+
+            <h3>Micro ATM (mPOS)</h3>
+
+            <p>
+              Add convenient card transaction capabilities
+              to your existing business.
+            </p>
+          </article>
+
+
+          <article class="service-card reveal">
+            <div class="service-icon">▣</div>
+
+            <h3>Bill Payments (BBPS)</h3>
+
+            <p>
+              Let customers pay everyday utility bills
+              directly from your shop.
+            </p>
+          </article>
+
+
+          <article class="service-card reveal">
+            <div class="service-icon">✈</div>
+
+            <h3>Travel & Ticketing</h3>
+
+            <p>
+              Offer travel and ticketing services as
+              another useful revenue opportunity.
+            </p>
+          </article>
+
+
+          <article class="service-card reveal">
+            <div class="service-icon">PAN</div>
+
+            <h3>PAN Card Services</h3>
+
+            <p>
+              Provide customers with convenient access
+              to PAN-related services.
+            </p>
+          </article>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         EARNING OPPORTUNITY
+    ====================================================== -->
+
+    <section class="section earning-section">
+
+      <div class="container earning-grid">
+
+        <div class="earning-copy reveal">
+
+          <div class="eyebrow">
+            <span class="eyebrow-dot"></span>
+            GROW YOUR BUSINESS
+          </div>
+
+          <h2>
+            Your shop already has customers.
+            Now give them more reasons to visit.
+          </h2>
+
+          <p>
+            Instead of depending only on your existing products,
+            add useful digital services that people regularly need.
+          </p>
+
+          <div class="earning-points">
+
+            <div class="earning-point">
+              <span class="earning-check">✓</span>
+              Add services to your existing shop
+            </div>
+
+            <div class="earning-point">
+              <span class="earning-check">✓</span>
+              Serve more everyday customer needs
+            </div>
+
+            <div class="earning-point">
+              <span class="earning-check">✓</span>
+              Create additional commission opportunities
+            </div>
+
+            <div class="earning-point">
+              <span class="earning-check">✓</span>
+              Get local assistance in Dewas
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <div class="earning-card reveal">
+
+          <div class="earning-card-inner">
+
+            <div class="earning-card-header">
+
+              <div>
+                <small>YOUR POTENTIAL REVENUE MIX</small>
+                <strong style="display:block;">
+                  Multiple services
+                </strong>
+              </div>
+
+              <span style="font-size:20px;">↗</span>
+
+            </div>
+
+
+            <div class="income-bars">
+
+              <div class="income-row">
+                <span>AEPS</span>
+                <div class="bar">
+                  <i style="width:88%;"></i>
+                </div>
+                <b>High</b>
+              </div>
+
+              <div class="income-row">
+                <span>DMT</span>
+                <div class="bar">
+                  <i style="width:74%;"></i>
+                </div>
+                <b>High</b>
+              </div>
+
+              <div class="income-row">
+                <span>BBPS</span>
+                <div class="bar">
+                  <i style="width:63%;"></i>
+                </div>
+                <b>Good</b>
+              </div>
+
+              <div class="income-row">
+                <span>Travel</span>
+                <div class="bar">
+                  <i style="width:52%;"></i>
+                </div>
+                <b>Good</b>
+              </div>
+
+              <div class="income-row">
+                <span>PAN</span>
+                <div class="bar">
+                  <i style="width:44%;"></i>
+                </div>
+                <b>Extra</b>
+              </div>
+
+            </div>
+
+            <p style="
+              margin:24px 0 0;
+              color:rgba(255,255,255,.45);
+              font-size:9px;
+            ">
+              Illustrative only. Actual commissions depend on
+              service usage, transaction volume and applicable terms.
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         HOW IT WORKS
+    ====================================================== -->
+
+    <section
+      class="section steps-section"
+      id="how-it-works"
+    >
+
+      <div class="container">
+
+        <div class="section-heading reveal">
+
+          <div class="eyebrow">
+            <span class="eyebrow-dot"></span>
+            SIMPLE ONBOARDING
+          </div>
+
+          <h2>
+            From Shop Owner to Retailer
+            in 3 Simple Steps
+          </h2>
+
+          <p>
+            Start with your basic details and we'll guide
+            you through the onboarding process.
+          </p>
+
+        </div>
+
+
+        <div class="steps-grid">
+
+          <article class="step-card reveal">
+
+            <div class="step-number">01</div>
+
+            <h3>Apply Online</h3>
+
+            <p>
+              Fill in your name, shop details and WhatsApp
+              number through the application form.
+            </p>
+
+            <span class="step-arrow">→</span>
+
+          </article>
+
+
+          <article class="step-card reveal">
+
+            <div class="step-number">02</div>
+
+            <h3>Quick e-KYC</h3>
+
+            <p>
+              Complete the required verification process
+              with guidance from our team.
+            </p>
+
+            <span class="step-arrow">→</span>
+
+          </article>
+
+
+          <article class="step-card reveal">
+
+            <div class="step-number">03</div>
+
+            <h3>Start Earning</h3>
+
+            <p>
+              Activate your services and begin serving
+              customers from your shop.
+            </p>
+
+          </article>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         APPLICATION
+    ====================================================== -->
+
+    <section
+      class="section apply-section"
+      id="apply"
+    >
+
+      <div class="container apply-grid">
+
+        <div class="apply-copy reveal">
+
+          <div class="eyebrow">
+            <span class="eyebrow-dot"></span>
+            FREE RETAILER APPLICATION
+          </div>
+
+          <h2>
+            Ready to make your shop a digital service point?
+          </h2>
+
+          <p>
+            Send your basic details directly to us on WhatsApp.
+            No website account or backend registration is required
+            at this stage.
+          </p>
+
+
+          <div class="apply-benefits">
+
+            <div class="apply-benefit">
+              <span>✓</span>
+              Simple WhatsApp application
+            </div>
+
+            <div class="apply-benefit">
+              <span>✓</span>
+              Local Dewas assistance
+            </div>
+
+            <div class="apply-benefit">
+              <span>✓</span>
+              Multiple financial & utility services
+            </div>
+
+            <div class="apply-benefit">
+              <span>✓</span>
+              ₹0 joining fee
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <div class="form-card reveal">
+
+          <h3>
+            Create Free Retailer ID
+          </h3>
+
+          <p class="form-subtitle">
+            Enter your details. We'll continue the conversation
+            on WhatsApp.
+          </p>
+
+
+          <form id="retailerForm" novalidate>
+
+            <!-- NAME -->
+
+            <div class="form-group" id="nameGroup">
+
+              <label for="fullName">
+                Shop Owner Full Name *
+              </label>
+
+              <div class="input-wrap">
+
+                <span>👤</span>
+
+                <input
+                  id="fullName"
+                  name="fullName"
+                  type="text"
+                  placeholder="e.g. Rahul Sharma"
+                  autocomplete="name"
+                  required
+                />
+
+              </div>
+
+              <div class="error-text">
+                Please enter your full name.
+              </div>
+
+            </div>
+
+
+            <!-- SHOP -->
+
+            <div class="form-group" id="shopGroup">
+
+              <label for="shopDetails">
+                Shop Name & Address *
+              </label>
+
+              <textarea
+                id="shopDetails"
+                name="shopDetails"
+                placeholder="e.g. Sharma General Store, AB Road, Dewas"
+                required
+              ></textarea>
+
+              <div class="error-text">
+                Please enter your shop name and address.
+              </div>
+
+            </div>
+
+
+            <!-- PHONE -->
+
+            <div class="form-group" id="phoneGroup">
+
+              <label for="phone">
+                Your WhatsApp Number *
+              </label>
+
+              <div class="input-wrap">
+
+                <span>+91</span>
+
+                <input
+                  id="phone"
+                  name="phone"
+                  type="tel"
+                  inputmode="numeric"
+                  maxlength="15"
+                  placeholder="88279 79446"
+                  autocomplete="tel"
+                  required
+                />
+
+              </div>
+
+              <div class="error-text">
+                Please enter a valid WhatsApp number.
+              </div>
+
+            </div>
+
+
+            <button
+              type="submit"
+              class="btn btn-green btn-lg submit-btn"
+            >
+              Send Application on WhatsApp
+              <span>→</span>
+            </button>
+
+
+            <p class="privacy-note">
+              Your details are used only to contact you regarding
+              your retailer application.
+            </p>
+
+          </form>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         CONTACT
+    ====================================================== -->
+
+    <section
+      class="section contact-section"
+      id="contact"
+    >
+
+      <div class="container">
+
+        <div class="section-heading reveal">
+
+          <div class="eyebrow">
+            <span class="eyebrow-dot"></span>
+            CONTACT SHAHIL
+          </div>
+
+          <h2>
+            Let's Talk About Your Shop
+          </h2>
+
+          <p>
+            Choose whichever way is easiest for you.
+          </p>
+
+        </div>
+
+
+        <div class="contact-grid">
+
+          <a
+            class="contact-card reveal"
+            href="https://www.instagram.com/bizznext_dewas"
+            target="_blank"
+            rel="noopener"
+          >
+            <div class="contact-icon">◎</div>
+
+            <strong>Business Instagram</strong>
+
+            <small>
+              @bizznext_dewas
+            </small>
+          </a>
+
+
+          <a
+            class="contact-card reveal"
+            href="https://www.instagram.com/5h.ahil"
+            target="_blank"
+            rel="noopener"
+          >
+            <div class="contact-icon">◎</div>
+
+            <strong>Personal Instagram</strong>
+
+            <small>
+              @5h.ahil
+            </small>
+          </a>
+
+
+          <a
+            class="contact-card reveal"
+            href="tel:+918827979446"
+          >
+            <div class="contact-icon">☎</div>
+
+            <strong>Call Shahil</strong>
+
+            <small>
+              +91 88279 79446
+            </small>
+          </a>
+
+
+          <a
+            class="contact-card reveal"
+            href="mailto:shahilpatel.me@gmail.com"
+          >
+            <div class="contact-icon">✉</div>
+
+            <strong>Email</strong>
+
+            <small>
+              shahilpatel.me@gmail.com
+            </small>
+          </a>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- =======================================================
+       FOOTER
+  ======================================================== -->
+
+  <footer>
+
+    <div class="container">
+
+      <p style="margin:0;">
+        <strong>
+          Bizznext Dewas Authorized Distributor.
+        </strong>
+        Managed by Shahil Patel.
+      </p>
+
+      <p style="
+        margin:7px 0 0;
+        opacity:.45;
+      ">
+        © <span id="year"></span> Biznext Dewas. All rights reserved.
+      </p>
+
+    </div>
+
+  </footer>
+
+
+  <!-- =======================================================
+       FLOATING WHATSAPP
+  ======================================================== -->
+
+  <a
+    class="floating-wa pulse"
+    href="https://wa.me/918827979446?text=Hello%20Shahil,%20I%20want%20to%20increase%20my%20shop's%20income%20with%20Bizznext"
+    target="_blank"
+    rel="noopener"
+    aria-label="Chat with Shahil on WhatsApp"
+  >
+
+    <svg
+      viewBox="0 0 24 24"
+      fill="currentColor"
+      aria-hidden="true"
+    >
+      <path
+        d="M20.52 3.48A11.82 11.82 0 0 0 12.06 0C5.5 0 .16 5.34.16 11.9c0 2.1.55 4.15 1.6 5.96L.05 24l6.3-1.65a11.9 11.9 0 0 0 5.7 1.45h.01c6.55 0 11.9-5.34 11.9-11.9 0-3.18-1.24-6.17-3.44-8.42ZM12.06 21.8h-.01a9.86 9.86 0 0 1-5.03-1.38l-.36-.21-3.74.98 1-3.65-.23-.37a9.83 9.83 0 0 1-1.51-5.27C2.18 6.46 6.61 2.03 12.06 2.03c2.64 0 5.12 1.03 6.98 2.9a9.8 9.8 0 0 1 2.89 6.97c0 5.46-4.43 9.9-9.87 9.9Zm5.43-7.42c-.3-.15-1.77-.87-2.04-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.95 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.47-.89-.79-1.49-1.77-1.67-2.07-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.61-.92-2.21-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.49s1.07 2.89 1.22 3.09c.15.2 2.1 3.21 5.08 4.5.71.31 1.26.49 1.69.63.71.23 1.36.2 1.87.12.57-.09 1.77-.72 2.02-1.42.25-.7.25-1.3.17-1.42-.07-.12-.27-.2-.57-.35Z"
+      />
+    </svg>
+
+  </a>
+
+
+  <!-- =======================================================
+       TOAST
+  ======================================================== -->
+
+  <div
+    class="toast"
+    id="toast"
+    role="status"
+    aria-live="polite"
+  ></div>
+
+
+  <!-- =======================================================
+       JAVASCRIPT
+  ======================================================== -->
+
+  <script>
+
+    /* ---------------------------------------------------------
+       CONFIG
+    --------------------------------------------------------- */
+
+    const WHATSAPP_NUMBER = "918827979446";
+
+
+    /* ---------------------------------------------------------
+       YEAR
+    --------------------------------------------------------- */
+
+    document.getElementById("year").textContent =
+      new Date().getFullYear();
+
+
+    /* ---------------------------------------------------------
+       MOBILE MENU
+    --------------------------------------------------------- */
+
+    const menuButton =
+      document.getElementById("menuButton");
+
+    const mobileMenu =
+      document.getElementById("mobileMenu");
+
+    menuButton.addEventListener("click", () => {
+
+      const isOpen =
+        mobileMenu.classList.toggle("active");
+
+      document.body.classList.toggle(
+        "menu-open",
+        isOpen
+      );
+
+      menuButton.setAttribute(
+        "aria-expanded",
+        String(isOpen)
+      );
+
+      menuButton.textContent =
+        isOpen ? "✕" : "☰";
+    });
+
+
+    /* Close mobile menu after navigation */
+
+    mobileMenu
+      .querySelectorAll("a")
+      .forEach(link => {
+
+        link.addEventListener("click", () => {
+
+          mobileMenu.classList.remove("active");
+
+          document.body.classList.remove("menu-open");
+
+          menuButton.setAttribute(
+            "aria-expanded",
+            "false"
+          );
+
+          menuButton.textContent = "☰";
+        });
+
+      });
+
+
+    /* ---------------------------------------------------------
+       TOAST
+    --------------------------------------------------------- */
+
+    const toast =
+      document.getElementById("toast");
+
+    let toastTimer;
+
+    function showToast(message) {
+
+      toast.textContent = message;
+
+      toast.classList.add("show");
+
+      clearTimeout(toastTimer);
+
+      toastTimer = setTimeout(() => {
+        toast.classList.remove("show");
+      }, 3200);
+    }
+
+
+    /* ---------------------------------------------------------
+       FORM VALIDATION
+    --------------------------------------------------------- */
+
+    const form =
+      document.getElementById("retailerForm");
+
+    const fullName =
+      document.getElementById("fullName");
+
+    const shopDetails =
+      document.getElementById("shopDetails");
+
+    const phone =
+      document.getElementById("phone");
+
+
+    function cleanPhone(value) {
+
+      return value
+        .replace(/\D/g, "")
+        .replace(/^91/, "")
+        .slice(0, 10);
+
+    }
+
+
+    phone.addEventListener("input", () => {
+
+      phone.value =
+        cleanPhone(phone.value);
+
+    });
+
+
+    function setInvalid(groupId, invalid) {
+
+      const group =
+        document.getElementById(groupId);
+
+      group.classList.toggle(
+        "invalid",
+        invalid
+      );
+
+    }
+
+
+    form.addEventListener("submit", event => {
+
+      event.preventDefault();
+
+
+      const name =
+        fullName.value.trim();
+
+      const shop =
+        shopDetails.value.trim();
+
+      const userPhone =
+        cleanPhone(phone.value);
+
+
+      const nameInvalid =
+        name.length < 2;
+
+      const shopInvalid =
+        shop.length < 5;
+
+      const phoneInvalid =
+        userPhone.length !== 10;
+
+
+      setInvalid("nameGroup", nameInvalid);
+
+      setInvalid("shopGroup", shopInvalid);
+
+      setInvalid("phoneGroup", phoneInvalid);
+
+
+      if (
+        nameInvalid ||
+        shopInvalid ||
+        phoneInvalid
+      ) {
+
+        showToast(
+          "Please check the highlighted fields."
+        );
+
+        return;
+
+      }
+
+
+      /* -------------------------------------------------------
+         REQUIRED WHATSAPP MESSAGE
+      ------------------------------------------------------- */
+
+      const message =
+        `*NEW RETAILER APPLICATION*\n` +
+        `Hello Shahil, I want to apply for a Bizznext Retailer ID.\n` +
+        `Name: ${name},\n` +
+        `Shop: ${shop},\n` +
+        `Contact: ${userPhone}`;
+
+
+      const whatsappURL =
+        `https://wa.me/${WHATSAPP_NUMBER}` +
+        `?text=${encodeURIComponent(message)}`;
+
+
+      /*
+        Use location.href instead of window.open so that
+        mobile browsers are less likely to block the action.
+      */
+
+      window.location.href = whatsappURL;
+
+    });
+
+
+    /* ---------------------------------------------------------
+       REVEAL ANIMATIONS
+    --------------------------------------------------------- */
+
+    const revealElements =
+      document.querySelectorAll(".reveal");
+
+
+    if (
+      "IntersectionObserver" in window &&
+      !window.matchMedia(
+        "(prefers-reduced-motion: reduce)"
+      ).matches
+    ) {
+
+      const observer =
+        new IntersectionObserver(
+          entries => {
+
+            entries.forEach(entry => {
+
+              if (entry.isIntersecting) {
+
+                entry.target.classList.add(
+                  "visible"
+                );
+
+                observer.unobserve(
+                  entry.target
+                );
+
+              }
+
+            });
+
+          },
+          {
+            threshold: 0.12
+          }
+        );
+
+
+      revealElements.forEach(element => {
+        observer.observe(element);
+      });
+
+    } else {
+
+      revealElements.forEach(element => {
+        element.classList.add("visible");
+      });
+
+    }
+
+  </script>
+
+</body>
+</html>
